@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: rgb(21, 21, 139);
+  --secondary-color: cyan;
+  --background-color: 214, 219, 220;
+}
+
+html, 
+body {
+  font-family: "Fredoka", sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
