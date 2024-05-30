@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from '@/styles/Home.module.css'; 
 import turtles from '@/public/images/turtles.png';
+import mockup from '@/public/images/mockups.png';
 import waves from '@/public/images/wave.svg';
 import BubbleAnimation from '@/components/home/bubbles/BubbleAnimation';
 
@@ -29,8 +30,13 @@ export default function Home() {
             <h2>Sobre o projeto</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, dolore quae facilis temporibus expedita vel consequatur soluta tempora sed veniam suscipit ea quos asperiores atque quia fugiat maiores, error eaque!</p>
           </div>
+          <div className={styles.aboutImages}>
+            <Image className={styles.mockup} src={mockup} alt="Uma tartaruga" />
+          </div>
         </div>
       </section>
+
+
 
     </main>
   );

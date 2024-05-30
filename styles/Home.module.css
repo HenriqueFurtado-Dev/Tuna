@@ -46,14 +46,14 @@
 }
 
 .about {
-    padding: 40px 0;
-    background: lightslategray;
+    box-shadow: inset 0px 53px 53px -13px rgba(22,58,97,1);
     color: white;
 }
 
 .about .container {
     width: 1200px;
     margin: 0 auto;
+    display: flex;
 }
 
 .about .container h2 {
@@ -63,4 +63,15 @@
 .about .container p {
     font-size: 24px;
     font-weight: 300;
+}
+
+.about .container .aboutContent {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about .container .aboutImages {
+    width: 60%;  
 }

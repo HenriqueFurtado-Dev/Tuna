@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --main-color: rgb(21, 21, 139);
-  --secondary-color: cyan;
+  --main-color: #032437;
+  --secondary-color: #1e4c67;
   --background-color: 214, 219, 220;
 }
 
 html, 
 body {
   font-family: "Fredoka", sans-serif;
+  background-color: var(--main-color);
 }
 
 .container {
