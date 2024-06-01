@@ -11,8 +11,8 @@ const Header: React.FC = () => {
           <nav className={styles.nav}>
             <Link className={styles.itemMenu} href="/">Início</Link>
             <Link className={styles.itemMenu} href="/parcerias">Parcerias</Link>
-            <Link className={styles.itemMenu} href="/dashboard">Dashboard e Infos</Link>
-            <Link className={styles.itemMenu} href="/produtos">Produtos</Link>
+            <Link className={styles.itemMenu} href="/plastico">O Plástico</Link>
+            <Link className={styles.itemMenu} href="/faq">FAQ</Link>
             <Link className={styles.itemMenu} href="/voluntarios">Me voluntariar</Link>
           </nav>
         </div>

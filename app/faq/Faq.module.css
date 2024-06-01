@@ -1,0 +1,51 @@
+/* Faq.module.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+  
+.main {
+    flex: 3;
+    padding: 150px 0 50px 0;
+}
+
+.main .heading {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.title {
+    color: tan;
+    font-size: 18px;
+    background-color: #0c486adc;
+    padding: 8px;
+    border-radius: 8px 0 0 0;
+}
+  
+.sidebar {
+    flex: 1;
+    background-color: #0c486adc;
+    padding: 150px 30px 50px 30px;
+    color: white;
+    font-size: 18px;
+}
+  
+.faqItem {
+    margin-bottom: 20px;
+}
+
+.question {
+    cursor: pointer;
+}
+
+.answer {
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+.answer p {
+    margin: 0;
+}
+  
