@@ -245,3 +245,33 @@
     }
   }
   
+.charts {
+    padding: 60px 0;
+    background: linear-gradient(90deg, #1e4c67, #032437);
+}
+
+.charts h2 {
+    font-size: 42px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.charts .container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.charts .container .chartsIndividual {
+    width: 50%;
+    background-color: #032437a5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+}
