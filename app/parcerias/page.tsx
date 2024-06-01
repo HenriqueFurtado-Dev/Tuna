@@ -83,6 +83,8 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
   return (
     <main className={styles.Mainform}>
       <section className={styles.Sectionform}>
+        <h2>Formulário de parcerias</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, magni. Hic aperiam excepturi sit, ducimus deleniti amet aliquam beatae blanditiis omnis tempora autem repudiandae accusantium rerum? Natus nostrum labore maxime.</p>
         <div>
           <form onSubmit={handleSubmit} className={styles.form}>
             <label>
