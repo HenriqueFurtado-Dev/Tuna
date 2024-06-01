@@ -80,7 +80,6 @@ export default function Home() {
         </div>
       </section>
 
-      
       <section className={styles.charts}>
         <h2 className={styles.waveTitle}>Gráficos</h2>
         <div className={styles.container}>
@@ -96,7 +95,6 @@ export default function Home() {
       </section>
       
       
-     
 
     </main>
   );

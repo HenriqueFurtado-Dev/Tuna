@@ -9,9 +9,11 @@ const Header: React.FC = () => {
         <div className={styles.container}>
           <h1 className={styles.title}>My Website</h1>
           <nav className={styles.nav}>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
+            <Link className={styles.itemMenu} href="/">Início</Link>
+            <Link className={styles.itemMenu} href="/parcerias">Parcerias</Link>
+            <Link className={styles.itemMenu} href="/dashboard">Dashboard e Infos</Link>
+            <Link className={styles.itemMenu} href="/produtos">Produtos</Link>
+            <Link className={styles.itemMenu} href="/voluntarios">Me voluntariar</Link>
           </nav>
         </div>
       </div>
