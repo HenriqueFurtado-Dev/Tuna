@@ -30,7 +30,7 @@ export default function Home() {
       <section className={styles.about}>
         <div className={styles.container}>
           <div className={styles.aboutContent}>
-            <h2>Sobre o projeto</h2>
+            <h2 className={styles.waveTitle}>Sobre o projeto</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, dolore quae facilis temporibus expedita vel consequatur soluta tempora sed veniam suscipit ea quos asperiores atque quia fugiat maiores, error eaque!</p>
           </div>
           <div className={styles.aboutImages}>
@@ -40,33 +40,35 @@ export default function Home() {
       </section>
 
       <section className={styles.oceanTech}>
-        <h2>Sobre o projeto</h2>
-        <div className={styles.container}>
-          <div className={styles.iconColumn}>
-            <FaFish className={styles.icon} />
-            <h3>Exploração Marinha</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
-          </div>
-          <div className={styles.iconColumn}>
-            <FaShip className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
-          </div>
-          <div className={styles.iconColumn}>
-            <FaWater className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
-          </div>
-          <div className={styles.iconColumn}>
-            <FaRobot className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
-          </div>
-        </div>
-      </section>
+  <h2 className={styles.waveTitle}>Sobre o projeto</h2>
+  <div className={styles.container}>
+    <div className={`${styles.iconColumn} ${styles.moveSection}`}>
+      <FaFish className={styles.icon} />
+      <h3>Exploração Marinha</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+    </div>
+    <div className={`${styles.iconColumn} ${styles.moveSection}`}>
+      <FaShip className={styles.icon} />
+      <h3>Navegação Inteligente</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+    </div>
+    <div className={`${styles.iconColumn} ${styles.moveSection}`}>
+      <FaWater className={styles.icon} />
+      <h3>Navegação Inteligente</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+    </div>
+    <div className={`${styles.iconColumn} ${styles.moveSection}`}>
+      <FaRobot className={styles.icon} />
+      <h3>Navegação Inteligente</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+    </div>
+  </div>
+</section>
+
+
 
       <section className={styles.partners}>
-        <h2>Empresas Parceiras</h2>
+        <h2 className={styles.waveTitle}>Empresas Parceiras</h2>
         <div className={styles.container}>
           {[1, 2, 3, 4, 5].map((index) => (
             <div key={index} className={styles.partnerLogo}>
