@@ -11,11 +11,10 @@ const OceanTrashPage: React.FC = () => {
     <main>
 
       <div className={styles.bannerContainer}>
-        <Image className={styles.bannerImage} src={trash} alt="Uma tartaruga" />
         <div className={styles.overlay}></div> {/* Adicionando a sobreposição azul escura */}
+        <h1 className={styles.heading}>Lixo nos Oceanos</h1>
       </div>
 
-      <h1 className={styles.heading}>Lixo nos Oceanos</h1>
       <section className={styles.container}>
         <h2>Problema do Lixo nos Oceanos</h2>
         <p>
@@ -27,10 +26,6 @@ const OceanTrashPage: React.FC = () => {
           Aqui estão alguns dados sobre a quantidade de lixo nos oceanos:
         </p>
         <Bar />
-        <Circle />
-        <p>
-          Fontes: [Inserir fontes aqui]
-        </p>
       </section>
     </main>
   );

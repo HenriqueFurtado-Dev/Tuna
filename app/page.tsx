@@ -7,6 +7,7 @@ import turtles from '@/public/images/turtles.png';
 import mockup from '@/public/images/mockups.png';
 import waves from '@/public/images/wave.svg';
 import logoipsum from '@/public/images/logoipsum.png';
+import trash from '@/public/images/trash.jpg';
 
 import BubbleAnimation from '@/components/home/bubbles/BubbleAnimation';
 import Circle from '@/components/home/charts/circle';
@@ -16,7 +17,7 @@ export default function Home() {
   const oceanTrashData = { river: 40 };
   const oceanTrashByYear = { '1950': 100, '1960': 150, '1970': 200 }; // Exemplo de dados
   return (
-    <main>
+    <main className={styles.mainHome}>
       <section className={styles.banner}>
         <BubbleAnimation />
         <div className={styles.container}>
@@ -41,6 +42,32 @@ export default function Home() {
             <Image className={styles.mockup} src={mockup} alt="Mockup" />
           </div>
         </div>
+      </section>
+
+
+      <section className={styles.partners}>
+        <h2 className={styles.waveTitle}>Empresas Parceiras</h2>
+        <div className={styles.container}>
+          {[1, 2, 3, 4, 5].map((index) => (
+            <div key={index} className={styles.partnerLogo}>
+              <Image src={logoipsum} alt={`Logo ${index}`} className={styles.logoImage} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.project}>
+          <div className={styles.container}>
+            <div className={styles.projectContent}>
+              <h3>Lorem ipsum</h3>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+            </div>
+            <div className={styles.projectImage}>
+              <Image src={trash} alt="Uma tartaruga" />
+            </div>
+          </div>
       </section>
 
       <section className={styles.oceanTech}>
@@ -69,16 +96,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.partners}>
-        <h2 className={styles.waveTitle}>Empresas Parceiras</h2>
-        <div className={styles.container}>
-          {[1, 2, 3, 4, 5].map((index) => (
-            <div key={index} className={styles.partnerLogo}>
-              <Image src={logoipsum} alt={`Logo ${index}`} className={styles.logoImage} />
+      
+
+      <section className={styles.project}>
+          <div className={styles.container}>
+
+            <div className={styles.projectImage}>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Yomf5pBN8dY?si=_y7dRedVq3ienmKG" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  ></iframe>
+            </div> 
+
+            <div className={styles.projectContent}>
+              <h3>Lorem ipsum</h3>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
             </div>
-          ))}
-        </div>
+            
+          </div>
       </section>
+      
 
       <section className={styles.charts}>
         <h2 className={styles.waveTitle}>Gráficos</h2>
@@ -94,6 +130,19 @@ export default function Home() {
         </div>
       </section>
       
+      <section className={styles.project}>
+          <div className={styles.container}>
+            <div className={styles.projectContent}>
+              <h3>Lorem ipsum</h3>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+              <p>dolor sit amet consectetur adipisicing elit. Facere eos vel suscipit unde non sapiente corrupti explicabo nemo, et numquam, autem quaerat tempore molestiae similique porro neque ut at quisquam?</p>
+            </div>
+            <div className={styles.projectImage}>
+            <Image src={trash} alt="Uma tartaruga" />
+            </div>
+          </div>
+      </section>
       
 
     </main>

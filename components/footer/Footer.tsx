@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
 
                 <div className={styles.navigation}>
                     <h3>Navegação pelo site</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nihil aspernatur? Molestias neque totam provident cum doloremque accusantium animi repudiandae harum iste deserunt. Doloribus et commodi vitae maiores labore deleniti.</p>
                     <nav>
                         <ul>
                             <li>Inicio</li>

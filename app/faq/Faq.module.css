@@ -7,7 +7,7 @@
   
 .main {
     flex: 3;
-    padding: 150px 0 50px 0;
+    padding: 150px 60px 50px 0px;
 }
 
 .main .heading {
@@ -21,7 +21,7 @@
     font-size: 18px;
     background-color: #0c486adc;
     padding: 8px;
-    border-radius: 8px 0 0 0;
+    border-radius: 8px ;
 }
   
 .sidebar {
@@ -31,6 +31,7 @@
     color: white;
     font-size: 18px;
 }
+
   
 .faqItem {
     margin-bottom: 20px;
@@ -42,6 +43,8 @@
 
 .answer {
     background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 10px;
     padding: 10px;
 }
 

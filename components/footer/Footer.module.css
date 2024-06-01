@@ -1,6 +1,8 @@
 .footer {
     padding: 60px 0;
     background: linear-gradient(90deg, #1e4c67, #032437);
+    border-top: 2px solid rgba(128, 128, 128, 0.446);
+
 }
 
 .footer .container {
@@ -19,9 +21,16 @@
     padding-bottom: 40px;
 }
 
+.footer .container .navigation p {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto 30px;
+}
+
 .footer .container .navigation h3 {
     font-size: 32px;
     margin-bottom: 20px;
+    color: tan;
 }
 
 .footer .container .navigation nav ul {
@@ -33,7 +42,7 @@
 .footer .container .members {
     display: flex;
     justify-content: space-around;
-    color: rgb(77, 77, 77);
+    color: white;
 }
 
 .footer .container .members .membersIndividual {
@@ -41,7 +50,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: rgb(238, 238, 238);
+    background-color: #032437;
     padding: 8px 15px;
     border-radius: 8px;
 }
@@ -61,5 +70,5 @@
     gap: 10px;
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 2px solid grey;
+    border-top: 2px solid rgba(128, 128, 128, 0.446);
 }
