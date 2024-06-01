@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css';
 import turtles from '@/public/images/turtles.png';
 import mockup from '@/public/images/mockups.png';
 import waves from '@/public/images/wave.svg';
+import logoipsum from '@/public/images/logoipsum.png';
 
 import BubbleAnimation from '@/components/home/bubbles/BubbleAnimation';
 
@@ -64,6 +65,16 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.partners}>
+        <h2>Empresas Parceiras</h2>
+        <div className={styles.container}>
+          {[1, 2, 3, 4, 5].map((index) => (
+            <div key={index} className={styles.partnerLogo}>
+              <Image src={logoipsum} alt={`Logo ${index}`} className={styles.logoImage} />
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

@@ -167,3 +167,39 @@
 }
 
 
+/* src/styles/Home.module.css */
+.partners {
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #1e4c67, #032437);
+  }
+
+.partners h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.partners .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.partnerLogo {
+    flex: 1;
+    min-width: 150px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.logoImage {
+    filter: invert(1) brightness(2); /* Inverte as cores e aumenta o brilho */
+    transition: filter 0.3s ease;
+}
+
+.logoImage:hover {
+    filter: invert(1) brightness(2) grayscale(100%);
+}
