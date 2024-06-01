@@ -1,3 +1,17 @@
 .maps {
-    padding: 300px 0;
+    padding-top: 100px;
+}
+
+.maps .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.maps .container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
 }
