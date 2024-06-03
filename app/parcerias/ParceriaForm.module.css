@@ -66,10 +66,10 @@
 }
 
 .cepBusca {
-    width: 100% !important;
+    width: 100% !impor#DDA15Et;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row !important;
+    flex-direction: row !impor#DDA15Et;
     justify-content: space-around;
 }
 
@@ -97,11 +97,11 @@
 }
 
 .termos {
-    width: 100% !important;
+    width: 100% !impor#DDA15Et;
     background-color: #1e4c67;
     border-radius: 5px;
     display: flex;
-    flex-direction: row !important;
+    flex-direction: row !impor#DDA15Et;
     align-items: flex-start;
     padding: 5px;
     gap: 5px;

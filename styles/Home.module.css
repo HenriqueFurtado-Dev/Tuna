@@ -41,7 +41,7 @@
     font-size: 60px;
     font-weight: 600;
     line-height: 60px;
-    color: tan;
+    color: #DDA15E;
 }
 
 .banner .bannerImages {
@@ -66,11 +66,10 @@
 
 .about .container h2 {
     font-size: 42px;
-    color: tan;
+    color: #DDA15E;
 }
 
 .about .container p {
-    font-size: 24px;
     font-weight: 300;
 }
 
@@ -97,7 +96,7 @@
     font-size: 42px;
     text-align: center;
     margin-bottom: 30px;
-    color: tan;
+    color: #DDA15E;
 }
 
 .oceanTech .container {
@@ -127,7 +126,7 @@
 
 .oceanTech .icon {
     font-size: 80px; /* Adjust size as needed */
-    color: white;
+    color: #DDA15E;
     background: #032437;
     border-radius: 50%;
     padding: 10px;
@@ -147,7 +146,7 @@
     left: 5%;
     right: 5%;
     height: 2px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(210, 180, 140, 0.43);
     z-index: 1;
 }
 
@@ -184,7 +183,7 @@
     text-align: center;
     font-size: 42px;
     margin-bottom: 2rem;
-    color: tan;
+    color: #DDA15E;
 }
 
 .partners .container {
@@ -259,7 +258,7 @@
 .charts h2 {
     font-size: 42px;
     margin: 0 auto;
-    color: tan;
+    color: #DDA15E;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -302,7 +301,7 @@
 
 .project .container .projectContent h3 {
     font-size: 42px;
-    color: tan;
+    color: #DDA15E;
 }
 
 .project .container .projectImage {
