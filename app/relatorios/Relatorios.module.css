@@ -1,14 +1,75 @@
 /* Relatorios.module.css */
-
 .main {
     padding: 120px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+  
+  .table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .row {
+    display: table-row;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cell {
+    display: table-cell;
+    padding: 10px;
+    text-align: left;
   }
   
   .buttons {
-    margin-top: 10px;
+    display: flex;
   }
   
   .buttons button {
     margin-right: 10px;
+  }
+  
+  .deleteButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .editButton {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  
+  .form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .form button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
   }
   
