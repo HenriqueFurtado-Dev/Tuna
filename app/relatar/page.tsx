@@ -1,42 +1,51 @@
 'use client'
 
-// src/pages/cadastro-relatorio.tsx
 import React, { useState } from 'react';
 import styles from './CadastroRelatorio.module.css';
+import axios from 'axios';
 
 const CadastroRelatorio: React.FC = () => {
   const [local, setLocal] = useState('');
-  const [tipoDeLixo, setTipoDeLixo] = useState('');
+  const [tipodeLixo, setTipoDeLixo] = useState('');
   const [quantidade, setQuantidade] = useState<number | string>('');
   const [data, setData] = useState('');
-  const [mapSrc, setMapSrc] = useState('https://www.google.com/maps/embed/v1/view?key=AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko&center=-14.235004,-51.92528&zoom=4'); // Centro do Brasil
+  const [mapSrc, setMapSrc] = useState('https://www.google.com/maps/embed/v1/view?key=AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko&center=-14.235004,-51.92528&zoom=4');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
-    const response = await fetch('/api/reports', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ local, tipoDeLixo, quantidade, data }),
-    });
-
-    if (response.ok) {
-      setLocal('');
-      setTipoDeLixo('');
-      setQuantidade('');
-      setData('');
-      setErrorMessage('');
-      alert('Relatório cadastrado com sucesso!');
-    } else {
+  
+    console.log('Enviando requisição para cadastrar relatório...');
+  
+    try {
+      const response = await axios.post('http://localhost:8080/relatorios', {
+        local,
+        tipodeLixo, // Corrigido para tipodeLixo
+        quantidade: Number(quantidade), // Convertido para número
+        data
+      });
+  
+      console.log('Resposta recebida:', response);
+  
+      if (response.status === 200 || response.status === 201) {
+        setLocal('');
+        setTipoDeLixo(''); // Corrigido para setTipodeLixo
+        setQuantidade('');
+        setData('');
+        setErrorMessage('');
+        alert('Relatório cadastrado com sucesso!');
+      } else {
+        alert('Erro ao cadastrar relatório.');
+      }
+    } catch (error) {
+      console.error('Erro ao cadastrar relatório:', error);
       alert('Erro ao cadastrar relatório.');
     }
   };
+  
 
   const updateMap = async (address: string) => {
-    const apiKey = 'AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko'; // Substitua com sua chave de API do Google Maps
+    const apiKey = 'AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko';
     try {
       const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`);
       const data = await response.json();
@@ -49,6 +58,7 @@ const CadastroRelatorio: React.FC = () => {
         setErrorMessage('Não foi possível encontrar o local. Por favor, tente novamente.');
       }
     } catch (error) {
+      console.error('Erro ao buscar local:', error);
       setErrorMessage('Erro ao buscar local. Por favor, tente novamente.');
     }
   };
@@ -79,11 +89,11 @@ const CadastroRelatorio: React.FC = () => {
             {errorMessage && <p className={styles.error}>{errorMessage}</p>}
           </div>
           <div className={styles.field}>
-            <label htmlFor="tipoDeLixo">Tipo de Lixo</label>
+            <label htmlFor="tipodeLixo">Tipo de Lixo</label>
             <input
               type="text"
-              id="tipoDeLixo"
-              value={tipoDeLixo}
+              id="tipodeLixo"
+              value={tipodeLixo}
               onChange={(e) => setTipoDeLixo(e.target.value)}
               required
             />
