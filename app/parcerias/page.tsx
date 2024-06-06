@@ -20,6 +20,7 @@ interface FormData {
   bairro: string;
   rua: string;
   numeroEndereco: string;
+  referencia: string;
   concordaTermos: boolean;
 }
 
@@ -35,6 +36,7 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
     bairro: '',
     rua: '',
     numeroEndereco: '',
+    referencia: '',
     concordaTermos: false,
   });
 
@@ -77,7 +79,14 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit(formData);
+    axios.post('http://localhost:8080/relatorios', formData)
+      .then(response => {
+        console.log('Dados enviados com sucesso:', response.data);
+        onSubmit(formData);
+      })
+      .catch(error => {
+        console.error('Erro ao enviar dados:', error);
+      });
   };
 
   return (
@@ -134,7 +143,7 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
             </label> 
             <label>
               Referência:
-              <input placeholder='Locais próximos' type="text" name="numeroEndereco" value={formData.numeroEndereco} onChange={handleChange} />
+              <input placeholder='Locais próximos' type="text" name="referencia" value={formData.referencia} onChange={handleChange} />
             </label> 
             <label className={styles.termos}>
               <input type="checkbox" name="concordaTermos" checked={formData.concordaTermos} onChange={handleChange} />

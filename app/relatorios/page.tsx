@@ -91,7 +91,6 @@ export default function RelatoriosPage() {
 
         {editingRelatorio && (
           <div className={styles.form}>
-            <h2>Editar Relatório</h2>
             <input
               type="text"
               value={editingRelatorio.local}
@@ -112,8 +111,8 @@ export default function RelatoriosPage() {
               value={editingRelatorio.data}
               onChange={(e) => setEditingRelatorio({ ...editingRelatorio, data: e.target.value })}
             />
-            <button onClick={handleSave}>Salvar</button>
-            <button onClick={() => setEditingRelatorio(null)}>Cancelar</button>
+            <button className={styles.btnSalvar} onClick={handleSave}>Salvar</button>
+            <button className={styles.btnCancelar}  onClick={() => setEditingRelatorio(null)}>Cancelar</button>
           </div>
         )}
       </div>

@@ -13,63 +13,86 @@
     color: white;
 }
   
-  .table {
+.table {
     display: table;
     width: 100%;
     border-collapse: collapse;
-  }
-  
-  .row {
+}
+
+.row {
     display: table-row;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .cell {
+}
+
+.cell {
     display: table-cell;
     padding: 10px;
     text-align: left;
-  }
-  
-  .buttons {
+}
+
+.buttons {
     display: flex;
-  }
-  
-  .buttons button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons button {
     margin-right: 10px;
-  }
-  
-  .deleteButton {
-    background-color: red;
+}
+
+.deleteButton {
+    background-color: rgb(217, 0, 0);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.editButton {
+    background-color: rgb(238, 186, 17);
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-  }
-  
-  .editButton {
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .form {
+    border-radius: 10px;
+}
+
+.form {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     color: black;
-  }
-  
-  .form input {
+    gap: 20px;
+}
+
+.form input {
     margin-bottom: 10px;
     padding: 8px;
     font-size: 16px;
-  }
-  
-  .form button {
+    border-radius: 12px;
+    flex: 1;
+}
+
+.btnSalvar {
+    background-color: green;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+
+.btnCancelar {
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+} 
+
+.form button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-  }
-  
+}
