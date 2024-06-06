@@ -1,48 +1,84 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './CadastroRelatorio.module.css';
 import axios from 'axios';
+import Image from 'next/image';
+import coin from '@/public/images/coin.gif';
 
 const CadastroRelatorio: React.FC = () => {
   const [local, setLocal] = useState('');
   const [tipodeLixo, setTipoDeLixo] = useState('');
-  const [quantidade, setQuantidade] = useState<number | string>('');
+  const [quantidade, setQuantidade] = useState('');
   const [data, setData] = useState('');
   const [mapSrc, setMapSrc] = useState('https://www.google.com/maps/embed/v1/view?key=AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko&center=-14.235004,-51.92528&zoom=4');
   const [errorMessage, setErrorMessage] = useState('');
+  const [points, setPoints] = useState(0);
+  const [showReward, setShowReward] = useState(false);
+
+  useEffect(() => {
+    const storedPoints = localStorage.getItem('userPoints');
+    if (storedPoints) {
+      setPoints(parseInt(storedPoints, 10));
+    }
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-  
+
+    let quantidadeNum = 0;
+
+    switch (quantidade) {
+      case 'Pequena':
+        quantidadeNum = 10;
+        break;
+      case 'Moderada':
+        quantidadeNum = 50;
+        break;
+      case 'Grande':
+        quantidadeNum = 100;
+        break;
+      case 'Muito Grande':
+        quantidadeNum = 101; // Consideramos "mais de 100 itens" como 101
+        break;
+      default:
+        quantidadeNum = 0;
+    }
+
     console.log('Enviando requisição para cadastrar relatório...');
-  
+
     try {
       const response = await axios.post('http://localhost:8080/relatorios', {
         local,
-        tipodeLixo, // Corrigido para tipodeLixo
-        quantidade: Number(quantidade), // Convertido para número
+        tipodeLixo,
+        quantidade: quantidadeNum, // Usamos quantidadeNum convertido
         data
       });
-  
+
       console.log('Resposta recebida:', response);
-  
+
       if (response.status === 200 || response.status === 201) {
         setLocal('');
-        setTipoDeLixo(''); // Corrigido para setTipodeLixo
+        setTipoDeLixo('');
         setQuantidade('');
         setData('');
         setErrorMessage('');
-        alert('Relatório cadastrado com sucesso!');
+        setPoints(prevPoints => {
+          const newPoints = prevPoints + 10;
+          localStorage.setItem('userPoints', newPoints.toString());
+          return newPoints;
+        });
+        setShowReward(true);
+        setTimeout(() => setShowReward(false), 3000); // Hide reward after 3 seconds
+        console.log('Relatório cadastrado com sucesso!');
       } else {
-        alert('Erro ao cadastrar relatório.');
+        console.log('Erro ao cadastrar relatório.');
       }
     } catch (error) {
       console.error('Erro ao cadastrar relatório:', error);
       alert('Erro ao cadastrar relatório.');
     }
   };
-  
 
   const updateMap = async (address: string) => {
     const apiKey = 'AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko';
@@ -74,6 +110,7 @@ const CadastroRelatorio: React.FC = () => {
   return (
     <main className={styles.main}>
       <h1>Cadastro de Relatório de Lixo</h1>
+      <p className={styles.infos}>Forneça informações e receba seja recompensado por isso através das nossas empresas parceiras</p>
       <div className={styles.container}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>
@@ -81,6 +118,7 @@ const CadastroRelatorio: React.FC = () => {
             <input
               type="text"
               id="local"
+              placeholder='De preferência em que você encontrou o lixo. Ex: "Praia de Copacabana"'
               value={local}
               onChange={(e) => setLocal(e.target.value)}
               required
@@ -93,6 +131,7 @@ const CadastroRelatorio: React.FC = () => {
             <input
               type="text"
               id="tipodeLixo"
+              placeholder='Ex: "Plástico", "Papel", "Vidro"'
               value={tipodeLixo}
               onChange={(e) => setTipoDeLixo(e.target.value)}
               required
@@ -100,23 +139,30 @@ const CadastroRelatorio: React.FC = () => {
           </div>
           <div className={styles.field}>
             <label htmlFor="quantidade">Quantidade</label>
-            <input
-              type="number"
+            <p>Selecione de acordo com seu entendimento qual era a quantidade de resíduos:</p>
+            <select
               id="quantidade"
               value={quantidade}
               onChange={(e) => setQuantidade(e.target.value)}
               required
-            />
+            >
+              <option value="" disabled>Selecione a quantidade</option>
+              <option value="Pequena">Pequena (1-10 itens)</option>
+              <option value="Moderada">Moderada (10-50 itens)</option>
+              <option value="Grande">Grande (50-100 itens)</option>
+              <option value="Muito Grande">Muito Grande (mais de 100 itens)</option>
+            </select>
           </div>
           <div className={styles.field}>
             <label htmlFor="data">Data</label>
             <input
-              type="date"
-              id="data"
-              value={data}
-              onChange={(e) => setData(e.target.value)}
-              required
-            />
+          type="date"
+          id="data"
+          value={data}
+          onChange={(e) => setData(e.target.value)}
+          required
+          max={new Date().toISOString().split('T')[0]} // Define o valor máximo como a data atual
+        />
           </div>
           <button type="submit" className={styles.submitButton}>Cadastrar</button>
         </form>
@@ -130,6 +176,12 @@ const CadastroRelatorio: React.FC = () => {
           ></iframe>
         </div>
       </div>
+      {showReward && (
+        <div className={styles.reward}>
+          <p>+10 pontos</p>
+          <Image src={coin} alt="Uma moeda" />
+        </div>
+      )}
     </main>
   );
 };

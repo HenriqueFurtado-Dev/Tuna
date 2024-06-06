@@ -1,33 +1,26 @@
 'use client'
 
-// src/components/header/Header.tsx
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '@/components/header/Header.module.css'; 
+import trophyIcon from '@/public/images/trophy.png'; // Importe o ícone do troféu
 
 const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const storedPoints = localStorage.getItem('userPoints');
+    if (storedPoints) {
+      setPoints(parseInt(storedPoints, 10));
+    }
   }, []);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={styles.header}>
       <div className="container">
         <div className={styles.container}>
-          <h1 className={styles.title}>My Website</h1>
+          <h1 className={styles.title}>Tuná</h1>
           <nav className={styles.nav}>
             <Link className={styles.itemMenu} href="/">Início</Link>
             <Link className={styles.itemMenu} href="/plastico">O Plástico</Link>
@@ -36,6 +29,10 @@ const Header: React.FC = () => {
             <Link className={styles.itemMenu} href="/relatorios">Relatórios</Link>
             <Link className={styles.itemMenu} href="/relatar">Relatar um local</Link>
           </nav>
+          <div className={styles.pointsContainer}>
+            <p className={styles.points}>{points} pts</p>
+            <Image src={trophyIcon} alt="Ícone de troféu" className={styles.trophyIcon} />
+          </div>
         </div>
       </div>
     </header>

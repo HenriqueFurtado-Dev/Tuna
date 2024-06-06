@@ -1,18 +1,17 @@
 .header {
-  color: #fff;  
-  position: absolute;  
-  top: 0;  
-  left: 50%; 
-  transform: translateX(-50%);  
-  width: 100%;  
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center;  
-  padding: 1rem;  
-  z-index: 1000; 
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1000;
 }
-
 
 .container {
   display: flex;
@@ -22,7 +21,7 @@
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .nav {
@@ -46,4 +45,23 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+.pointsContainer {
+  display: flex;
+  align-items: center;
+  border: 2px solid grey;
+  padding: 5px 22px;
+  border-radius: 20px;
+}
+
+.points {
+  color: gold; /* Cor da quantidade de pontos */
+  font-weight: bold;
+  margin-right: 5px; /* Espaçamento entre a quantidade de pontos e a imagem */
+}
+
+.trophyIcon {
+  width: 30px; /* Largura da imagem da moeda */
+  height: auto; /* Altura ajustável */
 }
