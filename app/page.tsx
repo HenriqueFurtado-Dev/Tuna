@@ -7,6 +7,7 @@ import turtles from '@/public/images/turtles.png';
 import waves from '@/public/images/wave.svg';
 import tuna from '@/public/images/tuna-logo.jpeg' 
 import trash from '@/public/images/trash.jpg';
+import oceanTrash from '@/public/images/ocean-trash.jpg';
 
 import parceiro1 from '@/public/images/o2ocean.png';
 import parceiro2 from '@/public/images/select.png';
@@ -26,7 +27,7 @@ export default function Home() {
         <BubbleAnimation />
         <div className={styles.container}>
           <div className={styles.bannerContent}>
-            <h1>Seja bem vindo ao<br /> projeto Haora</h1>
+            <h1>Seja bem vindo ao<br /> projeto Tuná</h1>
             <p>A Tuná é um projeto que busca entender a origem do problema da poluição dos nossos oceanos. Queremos rastrear a origem da poluição a partir do contato com os seres humanos, a passagem por rios e córregos até a chegada aos oceanos.</p>
           </div>
           <div className={styles.bannerImages}>
@@ -69,7 +70,7 @@ export default function Home() {
               <p>No entanto, a responsabilidade não é apenas delas. Indivíduos também devem agir, reduzindo plásticos descartáveis, reciclando corretamente e participando de iniciativas de limpeza de praias. Pequenas ações diárias têm um grande impacto quando multiplicadas em escala global.</p>
             </div>
             <div className={styles.projectImage}>
-              <Image src={trash} alt="Uma tartaruga" />
+              <Image src={oceanTrash} alt="Uma tartaruga" />
             </div>
           </div>
       </section>
