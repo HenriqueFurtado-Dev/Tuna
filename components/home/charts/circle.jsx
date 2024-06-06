@@ -9,13 +9,13 @@ class ApexChart extends React.Component {
     super(props);
 
     this.state = {
-      series: [80, 50, 40],
+      series: [14.1, 11.9, 9.4, 9.1, 7.9, 7.6, 6.1, 33.9], // Porcentagens dos principais tipos de lixo
       options: {
         chart: {
           width: 380,
-          type: 'polarArea'
+          type: 'pie',
         },
-        labels: ['Lixo dos oceanos', 'demais', 'aaa'],
+        labels: ['Sacolas plásticas descartáveis', 'Garrafas plásticas', 'Embalagens de comida e talheres', 'Pacotes', 'Corda sintética', 'Equipamento de pesca', 'Tampas ou lacres de plástico', 'Outros'],
         fill: {
           opacity: 1
         },
@@ -23,20 +23,10 @@ class ApexChart extends React.Component {
           width: 1,
           colors: undefined
         },
-        yaxis: {
-          show: false
-        },
         legend: {
-          position: 'bottom'
-        },
-        plotOptions: {
-          polarArea: {
-            rings: {
-              strokeWidth: 0
-            },
-            spokes: {
-              strokeWidth: 0
-            }
+          position: 'bottom',
+          labels: {
+            colors: '#ffffff' // Alteração da cor das legendas para branco
           }
         },
         theme: {
@@ -53,7 +43,7 @@ class ApexChart extends React.Component {
   render() {
     return (
       <div className={styles.circle}>
-        <ReactApexChart options={this.state.options} series={this.state.series} type="polarArea" width={380} />
+        <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={380} />
       </div>
     );
   }

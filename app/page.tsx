@@ -4,10 +4,14 @@ import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 
 import turtles from '@/public/images/turtles.png';
-import mockup from '@/public/images/mockups.png';
 import waves from '@/public/images/wave.svg';
-import logoipsum from '@/public/images/logoipsum.png';
+import tuna from '@/public/images/tuna-logo.jpeg' 
 import trash from '@/public/images/trash.jpg';
+
+import parceiro1 from '@/public/images/o2ocean.png';
+import parceiro2 from '@/public/images/select.png';
+import parceiro3 from '@/public/images/pacto.png';
+import parceiro4 from '@/public/images/softek.png';
 
 import BubbleAnimation from '@/components/home/bubbles/BubbleAnimation';
 import Circle from '@/components/home/charts/circle';
@@ -39,7 +43,7 @@ export default function Home() {
             <p>A finalidade da Tuná é coletar dados, organizá-los de forma onde seja possível entender a origem dos descartes e disponibilizá-los para empresas e governos que irão atuar em ações de prevenção à poluição. Além de engajar a população e realizar campanhas de conscientização.</p>
           </div>
           <div className={styles.aboutImages}>
-            <Image className={styles.mockup} src={mockup} alt="Mockup" />
+            <Image className={styles.mockup} src={tuna} alt="Mockup" />
           </div>
         </div>
       </section>
@@ -48,11 +52,12 @@ export default function Home() {
       <section className={styles.partners}>
         <h2 className={styles.waveTitle}>Empresas Parceiras</h2>
         <div className={styles.container}>
-          {[1, 2, 3, 4, 5].map((index) => (
-            <div key={index} className={styles.partnerLogo}>
-              <Image src={logoipsum} alt={`Logo ${index}`} className={styles.logoImage} />
+            <div className={styles.partnerLogo}>
+              <Image src={parceiro1} className={styles.logoImage} alt="Mockup"/>
+              <Image src={parceiro2} className={styles.logoImage} alt="Mockup"/>
+              <Image src={parceiro3} className={styles.logoImage} alt="Mockup"/>
+              <Image src={parceiro4} className={styles.logoImage} alt="Mockup"/>
             </div>
-          ))}
         </div>
       </section>
 
@@ -74,23 +79,18 @@ export default function Home() {
         <div className={styles.container}>
           <div className={`${styles.iconColumn} ${styles.moveSection}`}>
             <FaFish className={styles.icon} />
-            <h3>Exploração Marinha</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+            <h3>Monitoramento dos oceanos</h3>
+            <p>Através de satélites e drones que buscam pontos de acúmulo de resíduos sólidos ou químicos sendo identificados por inteligência artificial, focamos nossa atenção onde realmente importa, buscando locais estratégicos com a análise de dados.</p>
           </div>
           <div className={`${styles.iconColumn} ${styles.moveSection}`}>
             <FaShip className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+            <h3>Ponto de largada</h3>
+            <p>Ponto de largada: identificar o local de origem do resíduo e o motivo do seu descarte, identificando rótulos e características únicas. Assim conseguimos mapear áreas onde esses resíduos têm o maior consumo e como se multiplicam na rota de descarte.</p>
           </div>
           <div className={`${styles.iconColumn} ${styles.moveSection}`}>
             <FaWater className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
-          </div>
-          <div className={`${styles.iconColumn} ${styles.moveSection}`}>
-            <FaRobot className={styles.icon} />
-            <h3>Navegação Inteligente</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi aperiam! Numquam repellat laudantium deleniti asperiores doloribus officiis rerum modi aliquid, voluptas explicabo soluta ad aspernatur similique, illum nam architecto!</p>
+            <h3>Engajamento social</h3>
+            <p>Engajamento social: aplicativo gamificado que permite aos usuários enviarem imagens e preencherem informações sobre resíduos, Através dessa gamificação os usuários acumulam pontos que podem ser trocados por descontos em empresas parceiras.</p>
           </div>
         </div>
       </section>
