@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '@/components/footer/Footer.module.css'; 
-import avatar from '@/public/images/avatar.png'; 
+import carlos from '@/public/images/carlos.jpg'; 
+import fabiola from '@/public/images/fabiola.jpg'; 
+import rafael from '@/public/images/rafael.jpeg'; 
 import Image from "next/image";
 
 const Footer: React.FC = () => {
@@ -24,26 +26,29 @@ const Footer: React.FC = () => {
 
                 <div className={styles.members}>
                     <div className={styles.membersIndividual}>
-                        <Image src={avatar} alt="Bruno" width={100} height={100} />
+                        <Image src={carlos} alt="Bruno" width={100} height={100} />
                         <div className={styles.informations}>
-                            <h3>Bruno</h3>
-                            <p>Desenvolvedor</p>
+                            <h3>Carlos Furtado</h3>
+                            <p>RM: 553597</p>
+                            <p>Turma: 1TDSZ</p>
                         </div>
                     </div>
 
                     <div className={styles.membersIndividual}>
-                        <Image src={avatar} alt="Bruno" width={100} height={100} />
+                        <Image src={fabiola} alt="Bruno" width={100} height={100} />
                         <div className={styles.informations}>
-                            <h3>Bruno</h3>
-                            <p>Desenvolvedor</p>
+                            <h3>Fabíola Falcão</h3>
+                            <p>RM: 552715</p>
+                            <p>Turma: 1TDSPB</p>
                         </div>
                     </div>
 
                     <div className={styles.membersIndividual}>
-                        <Image src={avatar} alt="Bruno" width={100} height={100} />
+                        <Image src={rafael} alt="Bruno" width={100} height={100} />
                         <div className={styles.informations}>
-                            <h3>Bruno</h3>
-                            <p>Desenvolvedor</p>
+                            <h3>Rafael de Novaes</h3>
+                            <p>RM: 553934</p>
+                            <p>Turma: 1TDSPB</p>
                         </div>
                     </div>
                 </div>

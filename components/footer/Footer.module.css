@@ -53,11 +53,12 @@
     background-color: #032437;
     padding: 8px 15px;
     border-radius: 8px;
+    width: 30%;
 }
 
 .footer .container .members .membersIndividual img {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     border: 2px solid grey;
     padding: 2px;
     border-radius: 30px;
