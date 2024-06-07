@@ -1,34 +1,15 @@
-// components/ParceriaForm.tsx
 'use client'
 
-import React, { useState } from 'react';
+
 import styles from './ParceriaForm.module.css';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-interface ParceriaFormProps {
-  onSubmit: (formData: FormData) => void;
-}
-
-interface FormData {
-  nomeResponsavel: string;
-  nomeEmpresa: string;
-  segmento: string;
-  quantidadeFuncionarios: number;
-  cep: string;
-  estado: string;
-  cidade: string;
-  bairro: string;
-  rua: string;
-  numeroEndereco: string;
-  referencia: string;
-  concordaTermos: boolean;
-}
-
-const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
-  const [formData, setFormData] = useState<FormData>({
+const ParceriaFormPage: React.FC = () => {
+  const [formData, setFormData] = useState({
     nomeResponsavel: '',
     nomeEmpresa: '',
-    segmento: 'tecnologia',
+    segmento: 'Tecnologia',
     quantidadeFuncionarios: 0,
     cep: '',
     estado: '',
@@ -39,6 +20,8 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
     referencia: '',
     concordaTermos: false,
   });
+
+  const [enviado, setEnviado] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -77,17 +60,47 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/relatorios', formData)
-      .then(response => {
-        console.log('Dados enviados com sucesso:', response.data);
-        onSubmit(formData);
-      })
-      .catch(error => {
-        console.error('Erro ao enviar dados:', error);
+    try {
+      await axios.post('http://localhost:8080/parceiros', {
+        nomeResponsavel: formData.nomeResponsavel,
+        nomeEmpresa: formData.nomeEmpresa,
+        segmento: formData.segmento,
+        quantidadeFuncionarios: formData.quantidadeFuncionarios,
+        concordaTermos: formData.concordaTermos,
+        endereco: {
+          cep: formData.cep,
+          estado: formData.estado,
+          cidade: formData.cidade,
+          bairro: formData.bairro,
+          rua: formData.rua,
+          numeroEndereco: formData.numeroEndereco,
+          referencia: formData.referencia
+        }
       });
+      console.log('Dados enviados com sucesso');
+      alert('Dados enviados com sucesso')
+      setEnviado(true);
+      setFormData({
+        nomeResponsavel: '',
+        nomeEmpresa: '',
+        segmento: 'Tecnologia',
+        quantidadeFuncionarios: 0,
+        cep: '',
+        estado: '',
+        cidade: '',
+        bairro: '',
+        rua: '',
+        numeroEndereco: '',
+        referencia: '',
+        concordaTermos: false,
+      });
+    } catch (error) {
+      console.error('Erro ao enviar dados:', error);
+    }
   };
+
 
   return (
     <main className={styles.Mainform}>
@@ -157,4 +170,4 @@ const ParceriaForm: React.FC<ParceriaFormProps> = ({ onSubmit }) => {
   );
 };
 
-export default ParceriaForm;
+export default ParceriaFormPage;

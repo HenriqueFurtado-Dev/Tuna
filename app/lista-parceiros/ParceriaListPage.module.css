@@ -1,0 +1,50 @@
+/* ParceriaListPage.module.css */
+.Main {
+    padding: 120px 20px;
+  }
+
+.Main h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .Section {
+    margin-bottom: 30px;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .Table {
+    border-radius: 12px;
+    border-collapse: collapse;
+  }
+
+  .Table th  {
+    color: black;
+  }
+  
+  .Table th,
+  .Table td {
+    border: 1px solid #dddddd78;
+    padding: 8px;
+  }
+  
+  .Table th {
+    background-color: #f2f2f25a;
+  }
+
+  .Table tr {
+    color: white;
+  }
+  
+  .Table tr:nth-child(even) {
+    background-color: #f2f2f22a;
+    color: black;
+  }
+  
+  .Table tr:hover {
+    background-color: #ddd;
+  }
+  

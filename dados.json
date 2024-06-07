@@ -1,0 +1,73 @@
+{
+  "parceiros": [
+    {
+      "id": 1,
+      "nomeResponsavel": "Fulano",
+      "nomeEmpresa": "Empresa A",
+      "segmento": "Tecnologia",
+      "quantidadeFuncionarios": 50,
+      "concordaTermos": true,
+      "endereco": {
+        "id": 1,
+        "cep": "12345-678",
+        "estado": "São Paulo",
+        "cidade": "São Paulo",
+        "bairro": "Centro",
+        "rua": "Rua Principal",
+        "numeroEndereco": "123",
+        "referencia": "Próximo ao banco"
+      }
+    },
+    {
+      "id": "2",
+      "nomeResponsavel": "Camilla",
+      "nomeEmpresa": "FIAP",
+      "segmento": "Tecnologia",
+      "quantidadeFuncionarios": "10000",
+      "concordaTermos": true,
+      "endereco": {
+        "cep": "02129050",
+        "estado": "SP",
+        "cidade": "São Paulo",
+        "bairro": "Vila Maria Alta",
+        "rua": "Rua Lobo de Miranda",
+        "numeroEndereco": "123",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "3",
+      "nomeResponsavel": "Carlos",
+      "nomeEmpresa": "FIAP",
+      "segmento": "Tecnologia",
+      "quantidadeFuncionarios": 0,
+      "concordaTermos": true,
+      "endereco": {
+        "cep": "02129050",
+        "estado": "SP",
+        "cidade": "São Paulo",
+        "bairro": "Vila Maria Alta",
+        "rua": "Rua Lobo de Miranda",
+        "numeroEndereco": "123",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "fa02",
+      "nomeResponsavel": "Wesley",
+      "nomeEmpresa": "Braslink",
+      "segmento": "Tecnologia",
+      "quantidadeFuncionarios": "60",
+      "concordaTermos": true,
+      "endereco": {
+        "cep": "02129050",
+        "estado": "SP",
+        "cidade": "São Paulo",
+        "bairro": "Vila Maria Alta",
+        "rua": "Rua Lobo de Miranda",
+        "numeroEndereco": "123",
+        "referencia": ""
+      }
+    }
+  ]
+}

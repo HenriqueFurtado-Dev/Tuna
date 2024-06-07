@@ -37,12 +37,13 @@ const Header: React.FC = () => {
           <h1 className={styles.title}>Tuná</h1>
           <nav className={`${styles.nav} ${isSidebarOpen ? styles.open : ''}`}>
             <Link className={styles.itemMenu} href="/">Início</Link>
-            <Link className={styles.itemMenu} href="/plastico">O Plástico</Link>
+            <Link className={styles.itemMenu} href="/plastico">O lixo</Link>
             <Link className={styles.itemMenu} href="/parcerias">Parcerias</Link>
+            <Link className={styles.itemMenu} href="/lista-parceiros">Lista</Link>
             <Link className={styles.itemMenu} href="/faq">FAQ</Link>
             <Link className={styles.itemMenu} href="/produtos">Produtos</Link>
             <Link className={styles.itemMenu} href="/relatorios">Relatórios</Link>
-            <Link className={styles.itemMenu} href="/relatar">Relatar um local</Link>
+            <Link className={styles.itemMenu} href="/relatar">Relatar local</Link>
           </nav>
           <div className={styles.pointsContainer}>
             <p className={styles.points}>{points} pts</p>
