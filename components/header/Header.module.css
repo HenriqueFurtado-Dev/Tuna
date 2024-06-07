@@ -11,6 +11,12 @@
   text-align: center;
   padding: 1rem;
   z-index: 1000;
+  position: fixed;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header.scrolled {
+  background-color: #032437; /* Altere esta cor conforme necessário */
 }
 
 .container {
@@ -66,7 +72,6 @@
   height: auto; /* Altura ajustável */
 }
 
-
 .sidebar {
   position: fixed; /* Torna a sidebar fixa */
   top: 0; /* Define a distância do topo */
@@ -78,6 +83,7 @@
   z-index: 99999;
   overflow-y: auto;
 }
+
 .sidebar.open {
   left: 0;
 }

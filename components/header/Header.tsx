@@ -8,6 +8,7 @@ import trophyIcon from '@/public/images/trophy.png'; // Importe o ícone do trof
 const Header: React.FC = () => {
   const [points, setPoints] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const storedPoints = localStorage.getItem('userPoints');
@@ -26,12 +27,25 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className="container">
         <div className={styles.container}>
           <h1 className={styles.title}>Tuná</h1>
