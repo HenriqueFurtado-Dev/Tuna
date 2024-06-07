@@ -283,6 +283,13 @@
     gap: 20px;
 }
 
+.charts .container img {
+    width: auto;
+    height: 380px;
+    margin: 10px 0;
+    border-radius: 12px;
+}
+
 .charts .container .chartsIndividual {
     width: 50%;
     background-color: #032437a5;

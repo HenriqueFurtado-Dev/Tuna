@@ -15,9 +15,11 @@ import parceiro2 from '@/public/images/select.png';
 import parceiro3 from '@/public/images/pacto.png';
 import parceiro4 from '@/public/images/softek.png';
 
+import grafico1 from '@/public/images/grafico1.jpg';
+import grafico2 from '@/public/images/grafico2.jpg';
+
 import BubbleAnimation from '@/components/home/bubbles/BubbleAnimation';
-import Circle from '@/components/home/charts/circle';
-import Bar from '@/components/home/charts/bar';
+
 
 export default function Home() {
   const oceanTrashData = { river: 40 };
@@ -119,11 +121,11 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.chartsIndividual}>
             <h3>Quantidade de lixo nos rios</h3>
-            <Circle/>
+            <Image src={grafico1} alt="Grafico demonstrando informacoes" />
           </div>
           <div className={styles.chartsIndividual}> 
             <h3>Quantidade de lixo nos oceanos</h3>
-            <Bar/>
+            <Image src={grafico2} alt="Grafico demonstrando informacoes" />
           </div>
         </div>
       </section>
