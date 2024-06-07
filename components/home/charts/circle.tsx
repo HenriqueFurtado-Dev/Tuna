@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function ApexChart(props: any) {
-  const [Chart, setChart] = useState<any>();
+  const [Chart, setChart] = useState<any>(null); // Inicializado como null
   const hasType = typeof props?.type !== "undefined";
 
   useEffect(() => {
@@ -15,6 +15,7 @@ export default function ApexChart(props: any) {
     fetchChart();
   }, []);
 
+  // Renderizar apenas quando Chart não for null
   return hasType && Chart && (
     <div>
       <Chart

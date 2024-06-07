@@ -1,6 +1,7 @@
 // nextjs13 - works
 "use client";
 import { useEffect, useState } from "react";
+import ReactApexChart from "react-apexcharts";
 
 export default function ApexChart(props: any) {
   const [Chart, setChart] = useState<any>();
@@ -9,7 +10,8 @@ export default function ApexChart(props: any) {
   useEffect(() => {
     const fetchChart = async () => {
       const mod = await import("react-apexcharts");
-      setChart(mod.default);
+      const ChartComponent = mod.default;
+      setChart(() => ChartComponent);
     };
 
     fetchChart();
