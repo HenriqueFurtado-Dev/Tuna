@@ -1,10 +1,13 @@
-'use client' // don't forget this part if you use app dir to mark the whole
-             // file as client-side components
+'use client'
 
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+// Importe dynamic do Next.js
+import dynamic from 'next/dynamic';
+
+// Importe ApexCharts como um componente dinâmico com { ssr: false }
+const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
+
+// Resto do seu código aqui
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
 import styles from './Chart.module.css';
 import { ApexOptions } from 'apexcharts';
 
