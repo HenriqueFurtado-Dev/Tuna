@@ -1,3 +1,4 @@
+'use client'
 // src/pages/index.tsx
 import { FaFish, FaShip, FaWater, FaRobot } from 'react-icons/fa';
 import Image from 'next/image';
