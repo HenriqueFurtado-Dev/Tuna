@@ -13,15 +13,7 @@ const CadastroRelatorio: React.FC = () => {
   const [data, setData] = useState('');
   const [mapSrc, setMapSrc] = useState('https://www.google.com/maps/embed/v1/view?key=AIzaSyASCXiUWjTfJhbM5F75DMK0lVbhuTbC1ko&center=-14.235004,-51.92528&zoom=4');
   const [errorMessage, setErrorMessage] = useState('');
-  const [points, setPoints] = useState(0);
   const [showReward, setShowReward] = useState(false);
-
-  useEffect(() => {
-    const storedPoints = localStorage.getItem('userPoints');
-    if (storedPoints) {
-      setPoints(parseInt(storedPoints, 10));
-    }
-  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -51,7 +43,7 @@ const CadastroRelatorio: React.FC = () => {
       const response = await axios.post('http://localhost:8080/relatorios', {
         local,
         tipodeLixo,
-        quantidade: quantidadeNum, // Usamos quantidadeNum convertido
+        quantidade: quantidadeNum,
         data
       });
 
@@ -63,13 +55,13 @@ const CadastroRelatorio: React.FC = () => {
         setQuantidade('');
         setData('');
         setErrorMessage('');
-        setPoints(prevPoints => {
-          const newPoints = prevPoints + 10;
-          localStorage.setItem('userPoints', newPoints.toString());
-          return newPoints;
-        });
+
+        const newPoints = parseInt(localStorage.getItem('userPoints') || '0', 10) + 10;
+        localStorage.setItem('userPoints', newPoints.toString());
+        window.dispatchEvent(new Event('storage'));
+
         setShowReward(true);
-        setTimeout(() => setShowReward(false), 3000); // Hide reward after 3 seconds
+        setTimeout(() => setShowReward(false), 3000); // Ocultar recompensa após 3 segundos
         console.log('Relatório cadastrado com sucesso!');
       } else {
         console.log('Erro ao cadastrar relatório.');
@@ -110,7 +102,7 @@ const CadastroRelatorio: React.FC = () => {
   return (
     <main className={styles.main}>
       <h1>Cadastro de Relatório de Lixo</h1>
-      <p className={styles.infos}>Forneça informações e receba seja recompensado por isso através das nossas empresas parceiras</p>
+      <p className={styles.infos}>Forneça informações e seja recompensado por isso através das nossas empresas parceiras</p>
       <div className={styles.container}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>
@@ -156,13 +148,13 @@ const CadastroRelatorio: React.FC = () => {
           <div className={styles.field}>
             <label htmlFor="data">Data</label>
             <input
-          type="date"
-          id="data"
-          value={data}
-          onChange={(e) => setData(e.target.value)}
-          required
-          max={new Date().toISOString().split('T')[0]} // Define o valor máximo como a data atual
-        />
+              type="date"
+              id="data"
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+              required
+              max={new Date().toISOString().split('T')[0]} // Define o valor máximo como a data atual
+            />
           </div>
           <button type="submit" className={styles.submitButton}>Cadastrar</button>
         </form>

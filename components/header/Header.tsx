@@ -14,6 +14,16 @@ const Header: React.FC = () => {
     if (storedPoints) {
       setPoints(parseInt(storedPoints, 10));
     }
+
+    const handleStorageChange = () => {
+      const updatedPoints = localStorage.getItem('userPoints');
+      if (updatedPoints) {
+        setPoints(parseInt(updatedPoints, 10));
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   return (
@@ -26,6 +36,7 @@ const Header: React.FC = () => {
             <Link className={styles.itemMenu} href="/plastico">O Plástico</Link>
             <Link className={styles.itemMenu} href="/parcerias">Parcerias</Link>
             <Link className={styles.itemMenu} href="/faq">FAQ</Link>
+            <Link className={styles.itemMenu} href="/produtos">Produtos</Link>
             <Link className={styles.itemMenu} href="/relatorios">Relatórios</Link>
             <Link className={styles.itemMenu} href="/relatar">Relatar um local</Link>
           </nav>

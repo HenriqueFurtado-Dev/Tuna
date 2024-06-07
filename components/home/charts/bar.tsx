@@ -2,10 +2,22 @@
 
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import styles from './Chart.module.css'
+import styles from './Chart.module.css';
+import { ApexOptions } from 'apexcharts';
 
-class ApexChart extends React.Component {
-  constructor(props) {
+// Define os tipos para as props e o state
+interface ApexChartProps {}
+
+interface ApexChartState {
+  series: Array<{
+    name: string;
+    data: number[];
+  }>;
+  options: ApexOptions;
+}
+
+class ApexChart extends React.Component<ApexChartProps, ApexChartState> {
+  constructor(props: ApexChartProps) {
     super(props);
 
     this.state = {
@@ -16,7 +28,7 @@ class ApexChart extends React.Component {
       options: {
         chart: {
           height: 350,
-          type: 'line',
+          type: 'line' as 'line', // Definindo explicitamente como 'line'
         },
         dataLabels: {
           enabled: false,

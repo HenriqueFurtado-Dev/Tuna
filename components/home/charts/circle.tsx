@@ -2,10 +2,19 @@
 
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import styles from './Chart.module.css'
+import styles from './Chart.module.css';
+import { ApexOptions } from 'apexcharts';
 
-class ApexChart extends React.Component {
-  constructor(props) {
+// Define os tipos para as props e o state
+interface ApexChartProps {}
+
+interface ApexChartState {
+  series: number[]; // Série de dados é um array de números
+  options: ApexOptions;
+}
+
+class ApexChart extends React.Component<ApexChartProps, ApexChartState> {
+  constructor(props: ApexChartProps) {
     super(props);
 
     this.state = {
@@ -15,7 +24,16 @@ class ApexChart extends React.Component {
           width: 380,
           type: 'pie',
         },
-        labels: ['Sacolas plásticas descartáveis', 'Garrafas plásticas', 'Embalagens de comida e talheres', 'Pacotes', 'Corda sintética', 'Equipamento de pesca', 'Tampas ou lacres de plástico', 'Outros'],
+        labels: [
+          'Sacolas plásticas descartáveis', 
+          'Garrafas plásticas', 
+          'Embalagens de comida e talheres', 
+          'Pacotes', 
+          'Corda sintética', 
+          'Equipamento de pesca', 
+          'Tampas ou lacres de plástico', 
+          'Outros'
+        ],
         fill: {
           opacity: 1
         },
@@ -43,7 +61,12 @@ class ApexChart extends React.Component {
   render() {
     return (
       <div className={styles.circle}>
-        <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={380} />
+        <ReactApexChart 
+          options={this.state.options} 
+          series={this.state.series} 
+          type="pie" 
+          width={380} 
+        />
       </div>
     );
   }
