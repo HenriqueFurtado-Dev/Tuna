@@ -57,7 +57,6 @@ const OceanTrashPage: React.FC = () => {
         <p>
           Aqui estão alguns dados sobre a quantidade de lixo nos oceanos:
         </p>
-        <Bar />
       </section>
     </main>
   );
