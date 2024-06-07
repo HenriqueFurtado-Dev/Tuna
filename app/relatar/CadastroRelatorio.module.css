@@ -155,3 +155,25 @@
       transform: translateX(50%) translateY(20px);
     }
   }
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        flex-direction: column-reverse;
+    }
+    
+    .map {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .map iframe {
+      height: 200px;
+    }
+
+    .form {
+        width: 100%;
+    }
+  
+}

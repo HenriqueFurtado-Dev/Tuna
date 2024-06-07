@@ -6,10 +6,31 @@ import Image from 'next/image';
 import camisa from '@/public/images/camisa.webp';
 import oculos from '@/public/images/oculos.webp';
 import mergulho from '@/public/images/ecobag.webp';
+import camisaTuna from '@/public/images/tuna-camisa.jpeg';
+import bagTuna from '@/public/images/tuna-bag.jpeg';
+import protetorTuna from '@/public/images/tuna-protetor.jpeg';
 import coin from '@/public/images/coin.gif';
 
 const Produtos: React.FC = () => {
   const produtos = [
+    { 
+      nome: 'Camisa do Projeto', 
+      pontos: 180, 
+      imagem: camisaTuna, 
+      descricao: 'Uma camisa estilosa feita de uma de nossas principais empresas parceiras, para você pode aproveitar as ondas do mar.' 
+    },
+    { 
+      nome: 'Bag Tuná', 
+      pontos: 250, 
+      imagem: bagTuna, 
+      descricao: 'Uma ecobag resistente e sustentável para suas compras. Feito com material reciclado do oceano.' 
+    },
+    { 
+      nome: 'Protetor Solar', 
+      pontos: 80, 
+      imagem: protetorTuna, 
+      descricao: 'Um protetor feito de embalagens recicladas, para você se proteger do sol e ajudar o meio ambiente.' 
+    },
     { 
       nome: 'Camisa', 
       pontos: 250, 

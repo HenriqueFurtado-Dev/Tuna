@@ -56,7 +56,6 @@ export default function Home() {
             <div className={styles.partnerLogo}>
               <Image src={parceiro1} className={styles.logoImage} alt="Mockup"/>
               <Image src={parceiro2} className={styles.logoImage} alt="Mockup"/>
-              <Image src={parceiro3} className={styles.logoImage} alt="Mockup"/>
               <Image src={parceiro4} className={styles.logoImage} alt="Mockup"/>
             </div>
         </div>

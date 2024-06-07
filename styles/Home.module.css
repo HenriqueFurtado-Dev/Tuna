@@ -337,3 +337,82 @@
 .project .container .projectImage img {
     border-radius: 20px;
 }
+
+
+@media (max-width: 1200px) {
+    .banner .container,
+    .about .container,
+    .oceanTech .container,
+    .partners .container,
+    .charts .container,
+    .project .container {
+        width: 100%;
+    }
+}
+
+/* Responsividade para telas menores que 768px (dispositivos móveis) */
+@media (max-width: 767px) {
+    .banner .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner .container h1 {
+        font-size: 32px;
+        line-height: 28px;
+    }
+
+    .about .container {
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .about .container .aboutContent {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .partners .container {
+        width: 100%;
+    }
+
+    .partners .container .partnerLogo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partners .container .partnerLogo img {
+        width: 50%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .project .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .project .container .projectContent,
+    .project .container .projectImage  {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .project .container .projectImage img {
+        width: 100%;
+    }
+
+    .charts .container {
+        width: 100%;
+        flex-direction: column;
+        padding: 30px;
+    }
+    
+    .charts .container .chartsIndividual {
+        width: 100%;
+        padding: 30px;
+    }
+
+}

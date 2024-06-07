@@ -52,3 +52,17 @@
     margin: 0;
 }
   
+@media (max-width: 1024px) {
+
+    .main {
+        align-items: center;
+        padding: 60px 30px;
+    }
+
+    .sidebar {
+        display: none;
+        width: 0;
+        flex: 0;
+    }
+
+}

@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,6 +7,7 @@ import trophyIcon from '@/public/images/trophy.png'; // Importe o ícone do trof
 
 const Header: React.FC = () => {
   const [points, setPoints] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const storedPoints = localStorage.getItem('userPoints');
@@ -26,12 +26,16 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.container}>
           <h1 className={styles.title}>Tuná</h1>
-          <nav className={styles.nav}>
+          <nav className={`${styles.nav} ${isSidebarOpen ? styles.open : ''}`}>
             <Link className={styles.itemMenu} href="/">Início</Link>
             <Link className={styles.itemMenu} href="/plastico">O Plástico</Link>
             <Link className={styles.itemMenu} href="/parcerias">Parcerias</Link>
@@ -44,7 +48,23 @@ const Header: React.FC = () => {
             <p className={styles.points}>{points} pts</p>
             <Image src={trophyIcon} alt="Ícone de troféu" className={styles.trophyIcon} />
           </div>
+          <button className={styles.menuButton} onClick={toggleSidebar}>
+            <div className={styles.menuIcon}></div>
+            <div className={styles.menuIcon}></div>
+            <div className={styles.menuIcon}></div>
+          </button>
         </div>
+      </div>
+      <div className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
+        <nav className={styles.sidebarNav}>
+          <Link href="/">Início</Link>
+          <Link href="/plastico"> O Plástico</Link>
+          <Link href="/parcerias">Parcerias</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/produtos">Produtos</Link>
+          <Link href="/relatorios">Relatórios</Link>
+          <Link href="/relatar">Relatar um local</Link>
+        </nav>
       </div>
     </header>
   );

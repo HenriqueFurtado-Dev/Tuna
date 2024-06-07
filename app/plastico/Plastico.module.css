@@ -40,3 +40,22 @@
     color: #DDA15E;
     margin-top: 10px;
 }
+
+@media (max-width: 1200px) {
+    .bannerContainer {
+        height: 200px;
+    }
+
+    .heading {
+        font-size: 36px; 
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .container h2 {
+        font-size: 28px; 
+    }
+}

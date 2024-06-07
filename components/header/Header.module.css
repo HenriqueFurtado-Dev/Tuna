@@ -65,3 +65,76 @@
   width: 30px; /* Largura da imagem da moeda */
   height: auto; /* Altura ajustável */
 }
+
+
+.sidebar {
+  position: fixed; /* Torna a sidebar fixa */
+  top: 0; /* Define a distância do topo */
+  left: -280px; /* Esconde a sidebar da tela inicialmente */
+  width: 280px;
+  height: 100vh;
+  background-color: #032437;
+  transition: left 0.3s ease-in-out;
+  z-index: 99999;
+  overflow-y: auto;
+}
+.sidebar.open {
+  left: 0;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.sidebarNav a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.sidebarNav a:hover {
+  color: aqua;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+@media (max-width: 1080px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background-color: #032437;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .nav.open {
+    transform: translateX(0);
+  }
+}
