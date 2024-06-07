@@ -49,17 +49,11 @@ class ApexChart extends React.Component<ApexChartProps, ApexChartState> {
   }
 
   render() {
-    // Verifica se está no ambiente do navegador antes de renderizar
-    if (typeof window !== 'undefined') {
-      return (
-        <div className={styles.bar}>
-          <ReactApexChart options={this.state.options} series={this.state.series} type="line" height={350} />
-        </div>
-      );
-    } else {
-      // Renderiza algo diferente caso não esteja no ambiente do navegador
-      return <div>Componente ApexChart não pode ser renderizado neste ambiente.</div>;
-    }
+    return (
+      <div className={styles.bar}>
+        <ReactApexChart options={this.state.options} series={this.state.series} type="line" height={350} />
+      </div>
+    );
   }
 }
 
