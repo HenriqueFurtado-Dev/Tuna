@@ -10,20 +10,22 @@ const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const storedPoints = localStorage.getItem('userPoints');
-    if (storedPoints) {
-      setPoints(parseInt(storedPoints, 10));
-    }
-
-    const handleStorageChange = () => {
-      const updatedPoints = localStorage.getItem('userPoints');
-      if (updatedPoints) {
-        setPoints(parseInt(updatedPoints, 10));
+    if (typeof window !== 'undefined') {
+      const storedPoints = localStorage.getItem('userPoints');
+      if (storedPoints) {
+        setPoints(parseInt(storedPoints, 10));
       }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
+  
+      const handleStorageChange = () => {
+        const updatedPoints = localStorage.getItem('userPoints');
+        if (updatedPoints) {
+          setPoints(parseInt(updatedPoints, 10));
+        }
+      };
+  
+      window.addEventListener('storage', handleStorageChange);
+      return () => window.removeEventListener('storage', handleStorageChange);
+    }
   }, []);
 
   const toggleSidebar = () => {

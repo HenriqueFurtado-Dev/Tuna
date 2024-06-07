@@ -7,7 +7,6 @@ const BubbleAnimation: React.FC = () => {
       {Array.from({ length: 12 }, (_, i) => (
         <div key={i} className={`${styles.bubble} ${styles[`bubble--${i + 1}`]}`}></div>
       ))}
-      <div id="octocat" className={styles.octocat}></div>
     </div>
   );
 };

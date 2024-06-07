@@ -55,17 +55,23 @@ const CadastroRelatorio: React.FC = () => {
         setQuantidade('');
         setData('');
         setErrorMessage('');
-
-        const newPoints = parseInt(localStorage.getItem('userPoints') || '0', 10) + 10;
-        localStorage.setItem('userPoints', newPoints.toString());
-        window.dispatchEvent(new Event('storage'));
-
+      
+        // Verifica se está no ambiente do navegador antes de acessar o localStorage e o objeto window
+        if (typeof window !== 'undefined') {
+          const newPoints = parseInt(localStorage.getItem('userPoints') || '0', 10) + 10;
+          localStorage.setItem('userPoints', newPoints.toString());
+          window.dispatchEvent(new Event('storage'));
+        }
+      
         setShowReward(true);
         setTimeout(() => setShowReward(false), 3000); // Ocultar recompensa após 3 segundos
         console.log('Relatório cadastrado com sucesso!');
       } else {
         console.log('Erro ao cadastrar relatório.');
       }
+
+
+
     } catch (error) {
       console.error('Erro ao cadastrar relatório:', error);
       alert('Erro ao cadastrar relatório.');
