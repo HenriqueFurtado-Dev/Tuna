@@ -1,8 +1,6 @@
 // src/pages/ocean-trash.tsx
 import React from 'react';
 import Image from 'next/image';
-import Circle from '@/components/home/charts/circle';
-import Bar from '@/components/home/charts/bar';
 import trash from '@/public/images/trash.jpg';
 import styles from './Plastico.module.css';
 
